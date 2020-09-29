@@ -13,4 +13,10 @@ export class DealService {
     .toPromise()
     .then(response => response.json())
   }
+
+  public getDealPerCategory(category:string): Promise<Deal[]> {
+    return this.http.get(`http://localhost:3000/ofertas/?categoria=${category}`)
+    .toPromise()
+    .then(response => response.json())
+  }
 }
