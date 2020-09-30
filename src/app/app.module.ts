@@ -12,6 +12,8 @@ import { EnjoyComponent } from './enjoy/enjoy.component';
 
 import { ROUTES } from './app.routes';
 import { DealComponent } from './deal/deal.component';
+import { HowToUseComponent } from './deal/how-to-use/how-to-use.component';
+import { WhereIsItComponent } from './deal/where-is-it/where-is-it.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { DealComponent } from './deal/deal.component';
     FooterComponent,
     RestaurantsComponent,
     EnjoyComponent,
-    DealComponent
+    DealComponent,
+    HowToUseComponent,
+    WhereIsItComponent
   ],
   imports: [
     BrowserModule,

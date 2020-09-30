@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.dealService.getDeal()
       .then((deals: Deal[]) => this.deals = deals)
-      .catch(param => {console.log(param)});
+      .catch(param => {console.log('erro')});
   }
 
 }

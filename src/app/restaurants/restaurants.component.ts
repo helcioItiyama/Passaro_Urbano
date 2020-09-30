@@ -11,7 +11,8 @@ import { DealService } from '../deal.service';
 export class RestaurantsComponent implements OnInit {
   public deals: Deal[];
 
-  constructor(private dealService:DealService) { }
+  constructor( private dealService:DealService
+    ) { }
 
   ngOnInit() {
     this.dealService.getDealPerCategory('restaurante')
