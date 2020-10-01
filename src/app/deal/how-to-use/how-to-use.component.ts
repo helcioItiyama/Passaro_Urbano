@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { DealService } from '../../deal.service';
 
 @Component({
@@ -17,10 +17,12 @@ export class HowToUseComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dealService.howToUseDealById(this.route.parent.snapshot.params['id'])
-      .then((description:string) => {
-        this.howToUse = description;
-      })
+    this.route.parent.params.subscribe((routeParams:Params) =>{
+      this.dealService.howToUseDealById(routeParams.id)
+        .then((description:string) => {
+          this.howToUse = description;
+        })
+    })
   }
 
 }

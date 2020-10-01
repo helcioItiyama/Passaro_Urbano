@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -14,6 +14,7 @@ import { ROUTES } from './app.routes';
 import { DealComponent } from './deal/deal.component';
 import { HowToUseComponent } from './deal/how-to-use/how-to-use.component';
 import { WhereIsItComponent } from './deal/where-is-it/where-is-it.component';
+import { ShortDescription } from './util/short-desription.pipe';
 
 @NgModule({
   declarations: [
@@ -25,14 +26,15 @@ import { WhereIsItComponent } from './deal/where-is-it/where-is-it.component';
     EnjoyComponent,
     DealComponent,
     HowToUseComponent,
-    WhereIsItComponent
+    WhereIsItComponent,
+    ShortDescription
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'pt-Br'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

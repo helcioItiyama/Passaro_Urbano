@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { DealService } from '../deal.service';
 import { Deal } from '../shared/deals.model';
 
@@ -18,10 +18,13 @@ export class DealComponent implements OnInit {
     ) {}
 
   ngOnInit() {
-    this.dealService.getDealById(this.route.snapshot.params['id'])
+    this.route.params.subscribe((routeParams:Params)=> {
+      this.dealService.getDealById(routeParams.id)
       .then((deal:Deal) => {
         this.deal = deal;
       });
+    });
+
   }
 
 }
